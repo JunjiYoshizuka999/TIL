@@ -1,4 +1,5 @@
 //配列を使用した内定者を算出する練習問題
+// https://paiza.jp/works/mondai/array_utilization_primer/array_utilization_primer__offer
 
 import java.util.*;
 public class Main {
