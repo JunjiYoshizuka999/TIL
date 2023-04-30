@@ -1,0 +1,32 @@
+//配列を使用した内定者を算出する練習問題
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+        int m = sc.nextInt();
+        
+        int[] a = new int[n];
+        for(int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        
+        int count = -m;
+        for (int x : a) {
+            if(x >= k) {
+                count += 1;
+            }
+        }
+        if(count < 0) {
+            System.out.println(0);
+        } else {
+            System.out.println(count);
+        }
+        
+        //System.out.println(Math.max(count, 0));
+        
+    }
+}
