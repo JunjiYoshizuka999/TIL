@@ -27,6 +27,7 @@ public class Main {
             System.out.println(count);
         }
         
+        //ifの代わりにMath.maxメソッドを用いた別解
         //System.out.println(Math.max(count, 0));
         
     }
