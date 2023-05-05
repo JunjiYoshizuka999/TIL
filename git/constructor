@@ -1,0 +1,50 @@
+//コンストラクタを用いた練習問題
+//https://paiza.jp/works/mondai/class_primer/class_primer__constructor
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+class Employee {
+
+    int number;
+    String name;
+
+    Employee(int number, String name) {
+        this.number = number;
+        this.name = name;
+    }
+
+    int getNumber() {
+        return number;
+    }
+
+    String getName() {
+        return name;
+    }
+}
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        ArrayList<Employee> employees = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            String query = sc.next();
+            if (query.equals("make")) {
+                int number = sc.nextInt();
+                String name = sc.next();
+                employees.add(new Employee(number, name));
+            } else if (query.equals("getnum")) {
+                int index = sc.nextInt() - 1;
+                System.out.println(employees.get(index).getNumber());
+            } else if (query.equals("getname")) {
+                int index = sc.nextInt() - 1;
+                System.out.println(employees.get(index).getName());
+            }
+        }
+    }
+}
