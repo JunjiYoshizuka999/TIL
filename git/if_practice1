@@ -1,0 +1,44 @@
+//郵便料金を求めるifを使用した練習問題
+// https://paiza.jp/works/mondai/b_rank_new_level_up_problems/b_rank_new_level_up_problems__posting_fee
+
+import java.util.*;
+
+public class Main {
+    public static void main(String... args) {
+        
+        var sc = new Scanner(System.in);
+        
+        var y = sc.nextInt();
+        var x = sc.nextInt();
+        var h = sc.nextInt();
+        
+        var l = new int[5];
+        var m = new int[6];
+          
+        for (var i = 0; i < 5; i++) {
+            l[i] = sc.nextInt();
+        }
+        
+        for (var i = 0; i < 6; i++) {
+            m[i] = sc.nextInt();
+        }
+
+        if (h <= l[0]) {
+            if (Math.max(y, x) <= l[1]) {
+                System.out.println(m[0]);
+            } else if (y + x <= l[2]) {
+                System.out.println(m[1]);
+            } else {
+                System.out.println(m[2]);
+            }
+        } else {
+            if (Math.max(Math.max(y, x), h) <= l[3]) {
+                System.out.println(m[3]);
+            } else if (y + x + h <= l[4]) {
+                System.out.println(m[4]);
+            } else {
+                System.out.println(y * x * h * m[5]);
+            }
+        }
+    }
+}
