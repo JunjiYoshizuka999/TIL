@@ -1,0 +1,30 @@
+//検索ワードの履歴を出力する練習問題
+// https://paiza.jp/works/mondai/skillcheck_archive/search_history
+
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        int n = sc.nextInt();
+        String[] words = new String[n];
+        
+        for (int i = 0; i < n; i++) {
+            words[i] = sc.next();
+        }
+        
+        HashSet<String> appear = new HashSet<>();
+        
+        for (int i = n - 1; i >= 0; i--) {
+            if (appear.contains(words[i])) {
+                continue; 
+                
+            }
+            System.out.println(words[i]);
+            appear.add(words[i]);
+        }
+        
+    }
+}
