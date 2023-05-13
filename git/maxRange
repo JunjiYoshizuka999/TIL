@@ -1,0 +1,41 @@
+//連続した数値の最大値を出力する練習問題
+// https://paiza.jp/works/mondai/skillcheck_archive/max_range
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int k = sc.nextInt();
+
+        int[] sum = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            sum[i] = sc.nextInt();
+            sum[i] += sum[i - 1];
+        }
+
+        int maxVisitor = 0;
+        int dayFrom = 0;
+        int dayCandidates = 0;
+
+        for (int i = k; i <= n; i++) {
+            int visitor = sum[i] - sum[i - k];
+            if (visitor > maxVisitor) {
+                maxVisitor = visitor;
+                dayCandidates = 1;
+                dayFrom = i - k + 1;
+            } else if (visitor == maxVisitor) {
+                dayCandidates++;
+            }
+        }
+
+        System.out.println(dayCandidates + " " + dayFrom);
+    }
+}
+
+//*訪問者数の累積和を取り、連続する k 日の合計訪問者数の最大値 max_visitor を求めます。
+そして、連続する k 日の期間のうち、その合計訪問者数が max_visitor に等しい期間の数を数えます。このとき同時にそのような期間のうち最も速い開始日を記録しておきます。
+なお、この問題の制約は非常に小さいため、連続する k 日の期間の合計訪問者数を累積和を用いずに愚直に計算しても、実行時間制限に十分な余裕を持って間に合います。*//
