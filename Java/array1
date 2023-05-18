@@ -1,0 +1,41 @@
+//https://paiza.jp/works/mondai/data_structure/data_structure__array_step1
+
+//入力した解答
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        // 自分の得意な言語で
+        // Let's チャレンジ！！
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] a = new int[n];
+        int m = sc.nextInt();
+        
+        for (int i = 0; i < n; i++) {
+            a[i] = sc.nextInt();
+        }
+        System.out.println(a[m - 1]);
+    }
+}
+
+//模範解答
+
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+
+        List<Integer> a = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            a.add(sc.nextInt());
+        }
+
+        System.out.println(a.get(m - 1));
+    }
+}
