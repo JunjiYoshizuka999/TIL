@@ -1,0 +1,39 @@
+//https://paiza.jp/works/mondai/data_structure/data_structure__dict_step1
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        // 自分の得意な言語で
+        // Let's チャレンジ！！
+        Scanner sc = new Scanner(System.in);
+        
+        int n =sc.nextInt();
+        
+        Map<Integer, Integer> a = new HashMap<>() {
+            {
+                for (int i = 0; i < 10; i++) {
+                    put(i, 0);
+                }
+            }
+        };
+        for (int i = 0; i < n; i++) {
+            int a_i = sc.nextInt();
+            a.put(a_i, a.get(a_i) + 1);
+        }
+        
+        for (int i = 0; i < 10; i++) {
+            System.out.print(a.get(i));
+            if (i < 9) {
+                System.out.print(" ");
+            } else {
+                System.out.println();
+            }
+        }
+    }
+}
+
+//*本問題にはさまざまな解法が存在します。その中でも簡単に実装できる方法として、配列を用いる方法と辞書を用いる方法を紹介します。
+配列を用いる方法の方針は、「配列の i 番目は数値 i の出現回数を保持する」です。
+辞書を用いる方法を説明する前に、辞書について説明します。普段よく目にする国語辞典のような辞書を想像してください。
+このような辞書は「単語名」と「単語の意味」が 1 対 1 でひもづけられています。プログラムでも同じようなことをします。数値 i について、「 i 」を「単語名」、「 i の出現回数」を「単語の意味」と置き換えます。すると「 i 」に対して「 i の出現回数」がひもづけられます。
+このような「単語名」の追加、削除、「単語の意味」更新ができるデータ構造を辞書といいます。*//
