@@ -1,0 +1,25 @@
+//Xの倍数はA賞、Yの倍数はB賞、はずれはNを出力する練習問題
+
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        // 自分の得意な言語で
+        // Let's チャレンジ！！
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int X = sc.nextInt();
+        int Y = sc.nextInt();
+        
+        for (int i = 1; i < N + 1; i++) {
+            if (i % X == 0 && i % Y == 0) {
+                System.out.println("AB");
+            } else if (i % X == 0) {
+                System.out.println("A");
+            } else if (i % Y == 0) {
+                System.out.println("B");
+            } else {
+                System.out.println("N");
+            }
+        }
+    }
+}
