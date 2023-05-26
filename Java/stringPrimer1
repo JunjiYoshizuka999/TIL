@@ -1,0 +1,22 @@
+//https://paiza.jp/works/mondai/string_primer/normal_step4
+
+import java.util.*;
+
+public class Main {
+    public static void main(String... args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        //---------------------------------
+        // 1. Integer#parseInt
+        var S = sc.next();
+        System.out.println(Integer.parseInt(S) - 813);
+        //---------------------------------
+        
+        //---------------------------------
+        // 2. Scanner
+        // System.out.println(sc.nextInt() - 813);
+        //---------------------------------
+        
+    }
+}
